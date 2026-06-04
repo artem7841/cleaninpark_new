@@ -1,0 +1,117 @@
+.footer {
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #b8b8b8;
+ 
+  font-family: "Inter", sans-serif;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Левая часть */
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 500;
+
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  
+}
+
+.social {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.3s;
+}
+
+.icon {
+    width: 35px;
+}
+
+.social:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+
+
+/* Правая часть */
+.footer-mail {
+  font-size: 20px;
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.footer-mail:hover {
+  border-color: #111;
+}
+
+/* Нижний копирайт */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0 30px 0;
+  color: #666;
+  font-size: 15px;
+}
+
+/* ---------------- Адаптив ---------------- */
+
+/* Для экранов до 992px */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-left {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-right {
+    margin-top: 10px;
+  }
+}
+
+/* Для экранов до 600px */
+@media (max-width: 600px) {
+  .footer-logo {
+    font-size: 22px;
+  }
+
+  .social {
+    font-size: 22px;
+  }
+
+  .footer-mail {
+    font-size: 15px;
+  }
+
+  .footer-bottom {
+    font-size: 14px;
+    padding-bottom: 20px;
+  }
+}
