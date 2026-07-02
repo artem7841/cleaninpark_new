@@ -1,11 +1,14 @@
 
 import React from "react";
-import { useParams, Link } from "react-router-dom";
 import "../style/About.css";
 import avatar from "../assets/avatar.jpg";
+import { useSiteConfig } from "../context/SiteConfigContext";
 
 
 const About = () => {
+  const { config } = useSiteConfig();
+  const { company } = config;
+
   return (
     <section id="about" className="about">
       <div className="about-container">
@@ -17,14 +20,14 @@ const About = () => {
             </h2>
             <div className="about-description">
               <p>
-                До создания CleanInPark  я пять лет работал в  логистической компании, где прошел путь от выполнения линейных задач до оптимизации сложных операционных цепочек. Задача была — превратить хаотичные процессы в отлаженные конвейеры, где человеческий фактор сводится к минимуму, а результат предсказуем.
+                До создания {company.brandName}  я пять лет работал в  логистической компании, где прошел путь от выполнения линейных задач до оптимизации сложных операционных цепочек. Задача была — превратить хаотичные процессы в отлаженные конвейеры, где человеческий фактор сводится к минимуму, а результат предсказуем.
               </p>
               <p>
                 Главная «боль» в клининге — бессистемность и зависимость от человеческого ресурса, и как следствие — непредсказуемость результата.
               </p>
 
               <p>
-                Я создал CleanInPark как компанию, где качество — не случайность, а следствие продуманных до мелочей стандартов и процессов.
+                Я создал {company.brandName} как компанию, где качество — не случайность, а следствие продуманных до мелочей стандартов и процессов.
               </p>
             </div>
             
@@ -67,8 +70,8 @@ const About = () => {
               <div className="photo-frame"></div>
             </div>
             <div className="founder-info">
-              <p className="founder-name">Лопатин Ярослав</p>
-              <p className="founder-role">Основатель CleanInPark</p>
+              <p className="founder-name">{company.founderName}</p>
+              <p className="founder-role">{company.founderRole}</p>
             </div>
           </div>
         </div>

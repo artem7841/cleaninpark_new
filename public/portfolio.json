@@ -1,0 +1,27 @@
+{
+  "beforeAfter": [
+    { "before": "images/portfolio/before/01.jpg", "after": "images/portfolio/after/01.jpg" },
+    { "before": "images/portfolio/before/02.jpg", "after": "images/portfolio/after/02.jpg" },
+    { "before": "images/portfolio/before/03.jpg", "after": "images/portfolio/after/03.jpg" },
+    { "before": "images/portfolio/before/04.jpg", "after": "images/portfolio/after/04.jpg" },
+    { "before": "images/portfolio/before/05.jpg", "after": "images/portfolio/after/05.jpg" },
+    { "before": "images/portfolio/before/06.jpg", "after": "images/portfolio/after/06.jpg" },
+    { "before": "images/portfolio/before/07.jpg", "after": "images/portfolio/after/07.jpg" },
+    { "before": "images/portfolio/before/08.jpg", "after": "images/portfolio/after/08.jpg" },
+    { "before": "images/portfolio/before/09.jpg", "after": "images/portfolio/after/09.jpg" },
+    { "before": "images/portfolio/before/10.jpg", "after": "images/portfolio/after/10.jpg" },
+    { "before": "images/portfolio/before/11.jpg", "after": "images/portfolio/after/11.jpg" },
+    { "before": "images/portfolio/before/12.jpg", "after": "images/portfolio/after/12.jpg" },
+    { "before": "images/portfolio/before/13.jpg", "after": "images/portfolio/after/13.jpg" },
+    { "before": "images/portfolio/before/14.jpg", "after": "images/portfolio/after/14.jpg" },
+    { "before": "images/portfolio/before/15.jpg", "after": "images/portfolio/after/15.jpg" },
+    { "before": "images/portfolio/before/16.jpg", "after": "images/portfolio/after/16.jpg" }
+  ],
+  "gallery": [
+    "images/portfolio/gallery/01.jpg",
+    "images/portfolio/gallery/02.jpg",
+    "images/portfolio/gallery/03.jpg",
+    "images/portfolio/gallery/04.jpg",
+    "images/portfolio/gallery/05.jpg"
+  ]
+}

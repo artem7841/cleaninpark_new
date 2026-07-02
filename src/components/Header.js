@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import main from "../assets/main_image.png";
 import logo from "../assets/logo1.png";
 import "../style/Header.css";
+import { useSiteConfig } from "../context/SiteConfigContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { config } = useSiteConfig();
+  const { contacts } = config;
 
   // Функция для плавной прокрутки к разделу
   const scrollToSection = (sectionId) => {
@@ -112,9 +115,9 @@ const Header = () => {
             <img src={logo} className="logo" alt="logo"/>
           </div>
           <div className="top-bar-right">
-            <a  className="nav-phone"  href="tel:+79956623002" 
+            <a className="nav-phone" href={`tel:${contacts.phoneTel}`}
                   data-desktop-message="Позвонить? Откроется приложение для звонков">
-                  <span className="nav-phone">+7 (995) 662-30-02</span>
+                  <span className="nav-phone">{contacts.phoneDisplay}</span>
                 </a>
 
             <button className="pulse-button" onClick={() => scrollToSection('contact')}>Связаться</button>

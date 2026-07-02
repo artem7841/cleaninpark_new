@@ -1,8 +1,11 @@
 import React from 'react';
 import '../style/PrivacyPolicy.css';
+import { useSiteConfig } from '../context/SiteConfigContext';
 
 const PrivacyPolicy = () => {
   const currentDate = new Date().toLocaleDateString('ru-RU');
+  const { config } = useSiteConfig();
+  const { company, contacts } = config;
 
   return (
     <div className="privacy-policy">
@@ -12,19 +15,20 @@ const PrivacyPolicy = () => {
         <section className="policy-section">
           <h2>1. Общие положения</h2>
           <p>
-            Настоящая Политика в области обработки и защиты персональных данных компании CleanInPark 
+            Настоящая Политика в области обработки и защиты персональных данных компании {company.brandName}{' '}
             разработана в соответствии с Федеральным законом от 27.07.2006 г. № 152-ФЗ «О персональных данных» 
             и раскрывает основные категории персональных данных, обрабатываемых на информационном ресурсе 
-            CleanInPark, находящемся в информационно-телекоммуникационной сети «Интернет» по адресу: 
-            <a href="https://cleaninpark.ru">https://cleaninpark.ru</a>.
+            {company.brandName}, находящемся в информационно-телекоммуникационной сети «Интернет» по адресу:{' '}
+            <a href={company.websiteUrl}>{company.websiteUrl}</a>.
           </p>
         </section>
 
         <section className="policy-section">
           <h2>2. Оператор</h2>
-          <p>Компания CleanInPark</p>
-          <p>Контактный email: <a href="mailto:cleaninpark@yandex.ru">cleaninpark@yandex.ru</a></p>
-          <p>Телефон: <a href="tel:+79996820002">+7 (999) 682-00-02</a></p>
+          <p>Компания {company.brandName}</p>
+          <p>{company.legalName}, ИНН {company.inn}</p>
+          <p>Контактный email: <a href={`mailto:${contacts.email}`}>{contacts.email}</a></p>
+          <p>Телефон: <a href={`tel:${contacts.phoneTel}`}>{contacts.phoneDisplay}</a></p>
         </section>
 
         <section className="policy-section">
@@ -79,7 +83,11 @@ const PrivacyPolicy = () => {
             <li>Требовать уточнения, блокирования или уничтожения персональных данных</li>
             <li>Отозвать согласие на обработку персональных данных</li>
           </ul>
-          <p>Для реализации своих прав обращайтесь по email: <a href="mailto:cleaninpark@yandex.ru">cleaninpark@yandex.ru</a> или по телефону: <a href="tel:+79996820002">+7 (999) 682-00-02</a></p>
+          <p>
+            Для реализации своих прав обращайтесь по email:{' '}
+            <a href={`mailto:${contacts.email}`}>{contacts.email}</a> или по телефону:{' '}
+            <a href={`tel:${contacts.phoneTel}`}>{contacts.phoneDisplay}</a>
+          </p>
         </section>
 
         <section className="policy-section">

@@ -1,43 +1,65 @@
 import React from "react";
 import tg from "../assets/tg_icon.png";
-import whatsapp from "../assets/whatsapp_icon.png";
+import whatsapp from "../assets/MAX.svg.webp";
 import "../style/Footer.css";
-import { Omega } from "lucide-react";
 import logo from "../assets/logo1.png";
+import { useSiteConfig } from "../context/SiteConfigContext";
 
 const Footer = () => {
+  const { config } = useSiteConfig();
+  const { company, contacts } = config;
+
   return (
     <footer className="footer">
       <div className="container3">
-  <div className="footer-container">
-    {/* Левая часть */}
-    <div className="footer-left">
-      <img src={logo} className="logo2" alt="logo"/>
-      <div className="footer-socials">
-        <a href="https://wa.me/+79956623002" className="social" aria-label="WhatsApp">
-          <img className="icon" src={whatsapp}/>
-        </a>
-        <a href="https://t.me/+79956623002" className="social" aria-label="Telegram">
-          <img className="icon" src={tg}/>
-        </a>
-      </div>
-    </div>
+        <div className="footer-container">
+          {/* Левая часть */}
+          <div className="footer-left">
+            <img src={logo} className="logo2" alt="logo" />
+            <div className="footer-socials">
+              <a
+                href={contacts.whatsappUrl}
+                className="social"
+                aria-label="WhatsApp"
+              >
+                <img className="icon" src={whatsapp} alt="MAX" />
+              </a>
+              <a
+                href={contacts.telegramUrl}
+                className="social"
+                aria-label="Telegram"
+              >
+                <img className="icon" src={tg} alt="Telegram" />
+              </a>
+            </div>
+          </div>
 
-        {/* Правая часть */}
-        <div className="footer-right">
-          <p className="footer-mail">
-            cleaninpark@yandex.ru
+          {/* Правая часть */}
+          <div className="footer-right">
+            <p className="footer-mail">{contacts.email}</p>
+          </div>
+        </div>
+
+        {/* Нижняя полоса */}
+        <div className="footer-bottom">
+          <p>
+            © {company.brandName}, {company.copyrightYear}
+          </p>
+          <p>
+            {company.legalName}, ИНН {company.inn}
+          </p>
+          <p>
+            Телефон:{" "}
+            <a href={`tel:${contacts.phoneTelSecondary}`}>
+              {contacts.phoneDisplaySecondary}
+            </a>
+            {" | "}
+            {contacts.email}
+          </p>
+          <p>
+            <a href="#privacy-policy">Политика обработки персональных данных</a>
           </p>
         </div>
-      </div>
-
-      {/* Нижняя полоса */}
-      <div className="footer-bottom">
-        <p>© CleanInPark, 2025</p>
-        <p>Лопатин Ярослав Михайлович, ИНН 667908332008</p>
-  <p>Телефон: +7 (982) 716-62-07 | cleaninpark@yandex.ru</p>
-  <p><a href="#privacy-policy">Политика обработки персональных данных</a></p>
-      </div>
       </div>
     </footer>
   );

@@ -1,0 +1,28 @@
+{
+  "page": {
+    "title": "CleanInPark - Профессиональный клининг",
+    "description": "CleanInPark - профессиональные услуги клининга и уборки",
+    "ogUrl": "https://cleaninpark.ru"
+  },
+  "company": {
+    "brandName": "CleanInPark",
+    "legalName": "Лопатин Ярослав Михайлович",
+    "inn": "667908332008",
+    "founderName": "Лопатин Ярослав",
+    "founderRole": "Основатель CleanInPark",
+    "copyrightYear": "2025",
+    "websiteUrl": "https://cleaninpark.ru"
+  },
+  "contacts": {
+    "email": "cleaninpark@yandex.ru",
+    "phoneDisplay": "+7 (995) 662-30-02",
+    "phoneTel": "+79956623002",
+    "phoneDisplaySecondary": "+7 (982) 716-62-07",
+    "phoneTelSecondary": "+79827166207",
+    "telegramUrl": "https://t.me/+79956623002",
+    "whatsappUrl": "https://max.ru/u/f9LHodD0cOImONlYMOGzSj7dA0XT5owzRuQq3wOdErsun5gKCJMypWT_9c8"
+  },
+  "map": {
+    "yandexWidgetUrl": "https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=205650411945"
+  }
+}

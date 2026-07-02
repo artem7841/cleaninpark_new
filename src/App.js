@@ -1,5 +1,6 @@
 import React from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { SiteConfigProvider, SiteMeta } from "./context/SiteConfigContext";
 import Header from "./components/Header";
 import About from "./components/About";
 import Services from "./components/Services";
@@ -17,7 +18,9 @@ import ModalDiscount from './components/ModalDiscount';
 
 function App() {
   return (
-    <Router>
+    <SiteConfigProvider>
+      <SiteMeta />
+      <Router>
       <div className="App">
         <Routes>
           <Route path="/" element={
@@ -40,6 +43,7 @@ function App() {
         <ModalDiscount/>
       </div>
     </Router>
+    </SiteConfigProvider>
   );
 }
 
