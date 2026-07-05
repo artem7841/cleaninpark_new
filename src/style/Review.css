@@ -1,184 +1,310 @@
 .reviews-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .reviews-title {
-  text-align: center;
-  font-size: 40px;
-  margin-bottom: 40px;
-  font-weight: 700;
-  width: 100%; 
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    width: 100%;
 }
 
 .reviews-container {
-  max-width: 800px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
-  gap: 30px;
-  margin-bottom: 40px;
-  width: 100%; 
-  justify-content: center; 
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    width: 100%;
+    justify-content: center;
 }
 
 .review-card {
-  background: white;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e0e0e0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .review-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
 }
 
 .review-author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .author-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
-  background: #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .author-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .avatar-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .author-info {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .author-name {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #333;
-  font-weight: 600;
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
 }
 
 .review-date {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 2px;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 2px;
 }
 
 .review-rating {
-  color: #ffc107;
-  font-size: 1.1rem;
+    color: #ffc107;
+    font-size: 1.1rem;
 }
 
 .review-content {
-  color: #555;
-  line-height: 1.6;
-  font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: start;
 }
 
 .review-content p {
-  margin: 0;
+    margin: 0;
 }
 
 .reviews-actions {
-  text-align: center;
+    text-align: center;
 }
 
 .show-more-btn,
 .show-less-btn {
-  background: #ffffff;
+    background: #ffffff;
 
-  color: #5cd65c;;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
+    color: #5cd65c;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .show-more-btn:hover,
 .show-less-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(106, 234, 102, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(106, 234, 102, 0.4);
 }
 
 .reviews-loading {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #666;
-  padding: 60px 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    padding: 60px 20px;
 }
 
-/* Адаптивность */
+/* Блок рейтинга Авито под заголовком */
+.avito-rating-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+    flex-wrap: wrap; /* Чтобы на мобильных кнопка переносилась вниз, если мало места */
+}
+
+.avito-rating-score {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.avito-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2a2a2a;
+}
+
+.avito-max {
+    font-size: 1rem;
+    color: #767676;
+}
+
+/* Фирменный зеленый цвет звезд Авито */
+.avito-stars {
+    font-size: 1.6rem;
+    color: #ffb021;
+    letter-spacing: -2px; /* Чуть сдвигаем звезды ближе друг к другу */
+}
+
+/* Кнопка "Мы на Авито" */
+.avito-link-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #00aaff; /* Зеленый цвет Авито */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.avito-link-btn:hover {
+    background-color: #59c8ff; /* Чуть темнее при наведении */
+}
+
+.avito-link-btn:active {
+    transform: scale(0.98);
+}
 @media (max-width: 768px) {
-  .reviews-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .reviews-section {
-    padding: 20px 15px;
-  }
-  
-  .reviews-title {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-  }
-  
-  .review-card {
-    padding: 20px;
-  }
-  
-  .review-header {
+    .reviews-container {
+        /* Меняем minmax с 650px на 100%, чтобы карточка не сжималась и не вылезала за экран */
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        max-width: 100%; /* Убираем жесткое ограничение на планшетах/телефонах */
+    }
 
-    gap: 10px;
-  }
+    .reviews-section {
+        padding: 40px 0px;
+    }
+
+    .reviews-title {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    .review-card {
+        padding: 22px; /* Чуть увеличиваем внутренние отступы для объема */
+        border-radius: 16px; /* Делаем углы карточек более мягкими и современными */
+    }
+
+    .review-header {
+        flex-direction: row; /* Гарантируем, что имя и звезды на одной линии */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .review-content {
+        font-size: 1.05rem; /* Делаем текст отзыва крупнее и читабельнее */
+        line-height: 1.5;
+        margin-top: 10px;
+    }
 }
-
 @media (max-width: 480px) {
-  .review-author {
-    flex-direction: column;
+    /* Оптимизация плашки Авито на телефонах */
+    .avito-rating-badge {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 30px;
+        background: #f9f9f9;
+        padding: 20px; /* Увеличили внутренние отступы для баланса */
+        width: 100%;
+        box-sizing: border-box; /* Гарантирует, что padding не раздувает плашку наружу */
+    }
 
-    gap: 8px;
-  }
-  
-  .author-info {
+    /* Оценка и звезды теперь стоят в один аккуратный ряд */
+    .avito-rating-score {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+    }
 
-  }
+    .avito-number {
+        font-size: 1.8rem;
+    }
+
+    .avito-stars {
+        font-size: 1.5rem;
+        margin-top: -2px;
+    }
+
+    /* Исправленная кнопка "Мы на Авито" */
+    .avito-link-btn {
+        width: 100%;
+        box-sizing: border-box; /* Важно! Защищает кнопку от вылезания за края подложки */
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 1rem;
+        border-radius: 12px;
+    }
+
+    /* Оптимизация карточки отзыва */
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .review-author {
+        gap: 10px;
+        width: 100%;
+    }
+
+    .author-name {
+        font-size: 1.15rem;
+    }
+
+    .review-date {
+        font-size: 0.85rem;
+    }
+
+    .review-rating {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    .review-content {
+        font-size: 1.1rem;
+        color: #2c2c2c;
+    }
 }

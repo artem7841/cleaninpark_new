@@ -1,334 +1,282 @@
 .services {
-  padding: 60px 0;
+    padding: 60px 0;
 }
 
 .services h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
 }
 
-.services-slider {
-  position: relative;
-  overflow: hidden;
-}
-
-.services-track {
-  display: flex;
-  gap: 20px;
-  padding: 10px 0;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.services-track::-webkit-scrollbar {
-  display: none;
+/* Новая обертка для сетки вместо слайдера */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 колонки одинаковой ширины */
+    gap: 20px; /* Отступы между карточками */
+    width: 100%;
 }
 
 .service-card {
-  flex: 0 0 auto;
-  width: 300px;
-  height: 280px;
-  position: relative;
-  border-radius: 32px;
-  overflow: hidden;
-  cursor: pointer;
+    width: 100%; /* Карточка занимает всю ширину ячейки Grid */
+    height: 330px;
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
 .service-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 /* Передняя часть карточки (фото + название) */
 .service-card-front {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 30px;
-  text-align: center;
-  z-index: 1;
-}
-
-/* Фоновое изображение */
-.service-card-front::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: var(--bg-image);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 1;
-  transition: transform 0.3s ease;
-}
-
-/* Градиент только в нижней части */
-.service-card-front::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.4) 50%,
-    transparent 100%
-  );
-  z-index: 2;
-  transition: height 0.3s ease;
-}
-
-.service-card-title {
-  position: relative;
-  z-index: 3;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 0;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
-  padding: 30px 15px;
-}
-
-/* Контент карточки (описание) */
-.service-card-content {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  color: white;
-  padding: 25px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  z-index: 4;
-  transition: top 0.4s ease;
-  border-radius: 32px;
-  box-sizing: border-box;
-}
-
-.service-card-description {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 60%;
-  gap: 15px;
-}
-
-.service-short-description {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin: 0;
-  opacity: 0.9;
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-}
-
-.service-price {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #65D660;
-  margin: 0;
-  margin-top: 80px;
-}
-
-.service-details-link {
-  color: #65D660;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  margin-top: auto;
-  padding: 8px 16px;
-  border: 1px solid #65D660;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-.service-details-link:hover {
-  color: white;
-  background-color: #65D660;
-  text-decoration: none;
-}
-
-/* Hover эффекты для десктопа */
-@media (min-width: 1025px) {
-  .service-card:hover .service-card-front::before {
-    transform: scale(1.05);
-  }
-
-  .service-card:hover .service-card-front::after {
-    height: 100%;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.7) 30%,
-      rgba(0, 0, 0, 0.5) 60%,
-      rgba(0, 0, 0, 0.3) 100%
-    );
-  }
-
-  .service-card:hover .service-card-title {
-    transform: translateY(-20px);
-  }
-
-  .service-card:hover .service-card-content {
-    top: 0;
-  }
-}
-
-/* Для мобильных устройств */
-@media (max-width: 1024px) {
-  .service-card-content {
-    display: none; /* Скрываем описание на мобильных */
-  }
-  
-  .service-card {
-    cursor: pointer; /* Показываем что карточка кликабельна */
-  }
-  
-  /* Делаем всю карточку ссылкой на мобильных */
-  .service-card::after {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 5;
-    cursor: pointer;
-  }
-  
-  /* Убираем все hover эффекты на мобильных */
-  .service-card:hover .service-card-front::before {
-    transform: none;
-  }
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 30px;
+    text-align: center;
+    z-index: 1;
+}
 
-  .service-card:hover .service-card-front::after {
+/* Фоновое изображение */
+.service-card-front::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+/* Градиент только в нижней части */
+.service-card-front::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     height: 50%;
     background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.8) 0%,
-      rgba(0, 0, 0, 0.4) 50%,
-      transparent 100%
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        transparent 100%
     );
-  }
-
-  .service-card:hover .service-card-title {
-    transform: none;
-  }
-  
-  /* Легкий эффект при нажатии на мобильных */
-  .service-card:active .service-card-front::before {
-    transform: scale(0.98);
-    transition: transform 0.1s ease;
-  }
+    z-index: 2;
+    transition: height 0.3s ease;
 }
 
-/* Для очень маленьких экранов */
-@media (max-width: 480px) {
-  .service-card {
-    width: 280px;
-    height: 280px;
-  }
-  
-  .service-card-title {
-    font-size: 1.1rem;
-    padding: 15px 10px;
-  }
+.service-card-title {
+    position: relative;
+    z-index: 3;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    padding: 30px 15px;
 }
 
-/* Для сверхмаленьких экранов */
-@media (max-width: 360px) {
-  .service-card {
-    width: 260px;
-    height: 240px;
-  }
-  
-  .service-card-title {
-    font-size: 1rem;
-  }
-}
-
-/* Кнопки навигации */
-.slider-controls {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.slider-prev,
-.slider-next {
-  background: #65D660;
-  color: white;
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slider-prev:hover,
-.slider-next:hover {
-  background: #44993f;
-}
-
-/* Адаптивность для количества карточек */
-@media (min-width: 1200px) {
-  .service-card {
-    width: calc(25% - 15px);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-  .service-card {
-    width: calc(33.333% - 14px);
-  }
-}
-
-@media (max-width: 767px) {
-  .service-card {
-    width: calc(50% - 10px);
-  }
-  
-  .slider-controls {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .service-card {
+/* Контент карточки (описание) */
+.service-card-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-  }
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 4;
+    transition: top 0.4s ease;
+    border-radius: 32px;
+    box-sizing: border-box;
+}
+
+.service-card-description {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 60%;
+    gap: 15px;
+}
+
+.service-short-description {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.9;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.service-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #65d660;
+    margin: 0;
+    margin-top: 30px;
+}
+
+.service-details-link {
+    color: #65d660;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    margin-top: auto;
+    padding: 8px 16px;
+    border: 1px solid #65d660;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.service-details-link:hover {
+    color: white;
+    background-color: #65d660;
+    text-decoration: none;
+}
+
+/* Hover эффекты для десктопа */
+@media (min-width: 1025px) {
+    .service-card:hover .service-card-front::before {
+        transform: scale(1.05);
+    }
+
+    .service-card:hover .service-card-front::after {
+        height: 100%;
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.7) 30%,
+            rgba(0, 0, 0, 0.5) 60%,
+            rgba(0, 0, 0, 0.3) 100%
+        );
+    }
+
+    .service-card:hover .service-card-title {
+        transform: translateY(-20px);
+    }
+
+    .service-card:hover .service-card-content {
+        top: 0;
+    }
+}
+
+/* Адаптивность для сетки под разные экраны */
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(
+            3,
+            1fr
+        ); /* 3 колонки на средних экранах */
+    }
+}
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+    }
+
+    .service-card-content {
+        display: none; /* Скрываем описание на мобильных */
+    }
+
+    /* Делаем всю карточку ссылкой на мобильных */
+    .service-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        cursor: pointer;
+    }
+
+    /* Убираем все hover эффекты на мобильных */
+    .service-card:hover .service-card-front::before {
+        transform: none;
+    }
+
+    .service-card:hover .service-card-front::after {
+        height: 50%;
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0.4) 50%,
+            transparent 100%
+        );
+    }
+
+    .service-card:hover .service-card-title {
+        transform: none;
+    }
+
+    /* Легкий эффект при нажатии на мобильных */
+    .service-card:active .service-card-front::before {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+}
+
+/* Стили для телефонов */
+@media (max-width: 576px) {
+    .services-grid {
+        grid-template-columns: repeat(
+            2,
+            1fr
+        ); /* Оставляем 2 колонки и на смартфонах */
+        gap: 12px; /* Чуть уменьшаем отступы, чтобы карточки были крупнее */
+    }
+
+    .service-card {
+        height: 200px; /* Уменьшаем высоту, чтобы сохранить пропорции карточки */
+        border-radius: 20px; /* Делаем скругление чуть меньше для узких карточек */
+    }
+
+    .service-card-title {
+        font-size: 0.95rem; /* Уменьшаем шрифт, чтобы текст не вылезал за края */
+        padding: 10px 5px;
+    }
+}
+
+/* Для самых маленьких экранов (до 375px) */
+@media (max-width: 375px) {
+    .services-grid {
+        gap: 8px; /* Минимальные отступы */
+    }
+
+    .service-card {
+        height: 170px;
+    }
+
+    .service-card-title {
+        font-size: 0.85rem;
+    }
 }

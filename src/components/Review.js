@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import '../style/Review.css';
+import React, { useState, useEffect } from "react";
+import "../style/Review.css";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -10,12 +10,12 @@ const Reviews = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch('/reviews.json');
+        const response = await fetch("/reviews.json");
         const data = await response.json();
         setReviews(data);
         setLoading(false);
       } catch (error) {
-        console.error('Ошибка загрузки отзывов:', error);
+        console.error("Ошибка загрузки отзывов:", error);
         setLoading(false);
       }
     };
@@ -40,23 +40,48 @@ const Reviews = () => {
   return (
     <div id="reviews" className="reviews-section">
       <h2 className="reviews-title">Отзывы наших клиентов</h2>
-      
+
+      {/* Новый блок рейтинга Авито */}
+      <div className="avito-rating-badge">
+        <div className="avito-rating-score">
+          <span className="avito-number">4.9</span>
+          <span className="avito-max">из 5</span>
+        </div>
+        <div className="avito-stars">
+          {/* 5 закрашенных зеленых звезд как на Авито */}
+          <span className="avito-star-filled">★</span>
+          <span className="avito-star-filled">★</span>
+          <span className="avito-star-filled">★</span>
+          <span className="avito-star-filled">★</span>
+          <span className="avito-star-filled">★</span>
+        </div>
+        {/* Замените # на вашу реальную ссылку на профиль/объявление Авито */}
+        <a
+          href="https://www.avito.ru/user/fe213175fe7f543b209df32dca76376b/profile?src=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="avito-link-btn"
+        >
+          Мы на Авито
+        </a>
+      </div>
+
       <div className="reviews-container">
         {reviews.slice(0, visibleCount).map((review, index) => (
           <div key={review.id || index} className="review-card">
             <div className="review-header">
               <div className="review-author">
-
                 <div className="author-info">
                   <h3 className="author-name">{review.author}</h3>
                   <span className="review-date">{review.date}</span>
                 </div>
               </div>
               <div className="review-rating">
-                {'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}
+                {"★".repeat(review.rating)}
+                {"☆".repeat(5 - review.rating)}
               </div>
             </div>
-            
+
             <div className="review-content">
               <p>{review.text}</p>
             </div>

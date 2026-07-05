@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import { publicUrl } from "../utils/publicUrl";
+import Reviews from "./Review.js";
 
 const Portfolio = () => {
   const [beforeAfterSlides, setBeforeAfterSlides] = useState([]);
@@ -17,8 +18,8 @@ const Portfolio = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior: "smooth",
+        block: "start",
       });
     }
   };
@@ -55,9 +56,9 @@ const Portfolio = () => {
       const element = document.querySelector(location.hash);
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
           });
         }, 100);
       }
@@ -65,46 +66,52 @@ const Portfolio = () => {
   }, [location]);
 
   useEffect(() => {
-    if (currentSlide >= beforeAfterSlides.length && beforeAfterSlides.length > 0) {
+    if (
+      currentSlide >= beforeAfterSlides.length &&
+      beforeAfterSlides.length > 0
+    ) {
       setCurrentSlide(0);
     }
   }, [beforeAfterSlides, currentSlide]);
 
   useEffect(() => {
-    if (currentSimpleSlide >= galleryPhotos.length && galleryPhotos.length > 0) {
+    if (
+      currentSimpleSlide >= galleryPhotos.length &&
+      galleryPhotos.length > 0
+    ) {
       setCurrentSimpleSlide(0);
     }
   }, [galleryPhotos, currentSimpleSlide]);
 
   const handleMove = (e) => {
     if (!containerRef.current) return;
-    
+
     const containerRect = containerRef.current.getBoundingClientRect();
     const x = e.clientX - containerRect.left;
     const percentage = (x / containerRect.width) * 100;
     const clampedPercentage = Math.max(0, Math.min(100, percentage));
-    
+
     setSliderPosition(clampedPercentage);
   };
 
   const handleMouseDown = () => {
-    document.addEventListener('mousemove', handleMove);
-    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener("mousemove", handleMove);
+    document.addEventListener("mouseup", handleMouseUp);
   };
 
   const handleMouseUp = () => {
-    document.removeEventListener('mousemove', handleMove);
-    document.removeEventListener('mouseup', handleMouseUp);
+    document.removeEventListener("mousemove", handleMove);
+    document.removeEventListener("mouseup", handleMouseUp);
   };
 
   const handleTouchMove = (e) => {
     if (!containerRef.current) return;
-    
+
     const containerRect = containerRef.current.getBoundingClientRect();
     const x = e.touches[0].clientX - containerRect.left;
     const percentage = (x / containerRect.width) * 100;
     const clampedPercentage = Math.max(0, Math.min(100, percentage));
-    
+
     setSliderPosition(clampedPercentage);
   };
 
@@ -116,7 +123,10 @@ const Portfolio = () => {
 
   const prevSlide = () => {
     if (!beforeAfterSlides.length) return;
-    setCurrentSlide((prev) => (prev - 1 + beforeAfterSlides.length) % beforeAfterSlides.length);
+    setCurrentSlide(
+      (prev) =>
+        (prev - 1 + beforeAfterSlides.length) % beforeAfterSlides.length,
+    );
     setSliderPosition(50);
   };
 
@@ -127,7 +137,9 @@ const Portfolio = () => {
 
   const prevSimpleSlide = () => {
     if (!galleryPhotos.length) return;
-    setCurrentSimpleSlide((prev) => (prev - 1 + galleryPhotos.length) % galleryPhotos.length);
+    setCurrentSimpleSlide(
+      (prev) => (prev - 1 + galleryPhotos.length) % galleryPhotos.length,
+    );
   };
 
   if (loading) {
@@ -145,31 +157,31 @@ const Portfolio = () => {
     <section className="portfolio" id="portfolio">
       <div className="container">
         <h2>Наши работы</h2>
-        
+
         {beforeAfterSlides.length > 0 && (
           <div className="portfolio-slider">
             <div className="slider-container-wrapper">
-              <div 
+              <div
                 className="slider-container"
                 ref={containerRef}
                 onMouseDown={handleMouseDown}
                 onTouchMove={handleTouchMove}
               >
                 <div className="image-wrapper">
-                  <img 
-                    src={beforeAfterSlides[currentSlide].before} 
-                    alt="До уборки" 
+                  <img
+                    src={beforeAfterSlides[currentSlide].before}
+                    alt="До уборки"
                     className="before-image"
                   />
-                  <img 
-                    src={beforeAfterSlides[currentSlide].after} 
-                    alt="После уборки" 
+                  <img
+                    src={beforeAfterSlides[currentSlide].after}
+                    alt="После уборки"
                     className="after-image"
                     style={{ clipPath: `inset(0 0 0 ${sliderPosition}%)` }}
                   />
                 </div>
-                
-                <div 
+
+                <div
                   className="slider-handle"
                   style={{ left: `${sliderPosition}%` }}
                   onMouseDown={handleMouseDown}
@@ -186,7 +198,7 @@ const Portfolio = () => {
                   <span className="label-after">После</span>
                 </div>
 
-                <button 
+                <button
                   className="slider-arrow slider-arrow-prev"
                   onClick={prevSlide}
                   aria-label="Предыдущее фото"
@@ -194,7 +206,7 @@ const Portfolio = () => {
                   ‹
                 </button>
 
-                <button 
+                <button
                   className="slider-arrow slider-arrow-next"
                   onClick={nextSlide}
                   aria-label="Следующее фото"
@@ -208,7 +220,7 @@ const Portfolio = () => {
               {beforeAfterSlides.map((_, index) => (
                 <button
                   key={index}
-                  className={`nav-dot ${index === currentSlide ? 'active' : ''}`}
+                  className={`nav-dot ${index === currentSlide ? "active" : ""}`}
                   onClick={() => {
                     setCurrentSlide(index);
                     setSliderPosition(50);
@@ -220,22 +232,24 @@ const Portfolio = () => {
           </div>
         )}
 
+        <Reviews />
+
         {galleryPhotos.length > 0 && (
           <div className="portfolio-slider simple-slider">
             <div className="slider-container-wrapper">
-              <div 
+              <div
                 className="slider-container simple-slider-container"
                 ref={simpleSliderRef}
               >
                 <div className="image-wrapper simple-image-wrapper">
-                  <img 
-                    src={galleryPhotos[currentSimpleSlide]} 
-                    alt="Наши работы" 
+                  <img
+                    src={galleryPhotos[currentSimpleSlide]}
+                    alt="Наши работы"
                     className="simple-image"
                   />
                 </div>
 
-                <button 
+                <button
                   className="slider-arrow slider-arrow-prev"
                   onClick={prevSimpleSlide}
                   aria-label="Предыдущее фото"
@@ -243,7 +257,7 @@ const Portfolio = () => {
                   ‹
                 </button>
 
-                <button 
+                <button
                   className="slider-arrow slider-arrow-next"
                   onClick={nextSimpleSlide}
                   aria-label="Следующее фото"
@@ -257,7 +271,7 @@ const Portfolio = () => {
               {galleryPhotos.map((_, index) => (
                 <button
                   key={index}
-                  className={`nav-dot ${index === currentSimpleSlide ? 'active' : ''}`}
+                  className={`nav-dot ${index === currentSimpleSlide ? "active" : ""}`}
                   onClick={() => setCurrentSimpleSlide(index)}
                   aria-label={`Перейти к слайду ${index + 1}`}
                 />
@@ -266,7 +280,7 @@ const Portfolio = () => {
           </div>
         )}
 
-        <button 
+        <button
           onClick={() => scrollToSection("contact")}
           className="btn btn-anim"
         >

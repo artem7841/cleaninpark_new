@@ -1,60 +1,76 @@
 {
   "services": [
-    { 
+    {
       "id": 1,
-      "title": "Генеральная уборка", 
+      "title": "Генеральная уборка",
       "img": "images/services/serv_3.jpg",
       "description": "Полная уборка помещения с чисткой труднодоступных мест и дезинфекцией всех поверхностей",
-      "price": "От 160 до 180 руб за м²",
-      "link": "/service/general-cleaning" 
+      "price": "От 180 руб за м²",
+      "link": "/service/general-cleaning"
     },
-    { 
+    {
       "id": 2,
-      "title": "Разовая поддерживающая уборка", 
+      "title": "Разовая поддерживающая уборка",
       "img": "images/services/serv_4.jpg",
       "description": "Регулярная уборка для поддержания чистоты: влажная уборка, пылесос, чистка санузлов",
-      "price": "От 110 до 130 руб за м²",
-      "link": "/service/maintenance-cleaning" 
+      "price": "От 140 руб за м²",
+      "link": "/service/maintenance-cleaning"
     },
-    { 
+    {
       "id": 3,
-      "title": "Регулярная поддерживающая уборка", 
+      "title": "Регулярная поддерживающая уборка",
       "img": "images/services/serv_2.jpg",
       "description": "Уборка строительной пыли, удаление следов ремонта, чистка окон и подготовка к проживанию",
-      "price": "От 110 до 130 руб за м²",
-      "link": "/service/regular-cleaning" 
+      "price": "От 50 руб за м²",
+      "link": "/service/regular-cleaning"
     },
-    { 
+    {
       "id": 4,
-      "title": "Уборка после ремонта", 
+      "title": "Уборка после ремонта",
       "img": "images/services/serv_7.jpg",
       "description": "Уборка строительной пыли, удаление следов ремонта, чистка окон и подготовка к проживанию",
-      "price": "От 180 до 200 руб за м²",
-      "link": "/service/post-renovation" 
+      "price": "От 200 руб за м²",
+      "link": "/service/post-renovation"
     },
-    { 
+    {
       "id": 5,
-      "title": "Уборка офисов", 
+      "title": "Уборка офисов",
       "img": "images/services/serv_1.jpg",
       "description": "Комплексная уборка офисных помещений, переговорных, кухонь и зон отдыха",
       "price": "От 30 до 120 руб за м²",
-      "link": "/service/office-cleaning" 
+      "link": "/service/office-cleaning"
     },
-    { 
+    {
       "id": 6,
-      "title": "Мойка окон и балконов", 
+      "title": "Мойка окон и балконов",
       "img": "images/services/serv_5.jpg",
       "description": "Профессиональная мойка окон, витрин, балконов и лоджий с использованием специальных средств",
       "price": "От 500 руб за м²",
-      "link": "/service/window-cleaning" 
+      "link": "/service/window-cleaning"
     },
-    { 
+    {
       "id": 7,
-      "title": "Дополнительные услуги", 
+      "title": "Дополнительные услуги",
       "img": "images/services/serv_6.jpg",
       "description": "Точечное решение проблем с чистотой",
       "price": "От 500 руб",
-      "link": "/service/additional-services" 
+      "link": "/service/additional-services"
+    },
+    {
+      "id": 9,
+      "title": "Химчистка мягкой мебели и ковров",
+      "img": "images/services/serv_9.jpg",
+      "description": "Профессиональная глубокая очистка мебели от пятен, запахов, пыли и аллергенов.",
+      "price": "От 500 ₽",
+      "link": "/service/dry-cleaning"
+    },
+    {
+      "id": 10,
+      "title": "Озонирование помещений",
+      "img": "images/services/serv_8.jpg",
+      "description": "Профессиональная обработка помещений озоном для устранения неприятных запахов, бактерий, вирусов, плесени и аллергенов.",
+      "price": "От 1 500 ₽",
+      "link": "/service/ozonation"
     }
   ]
 }

@@ -13,36 +13,38 @@ import HowWork from "./components/HowWork";
 import ServiceDetail from "./components/ServiceDetail.js";
 import PrivacyPolicy from "./components/PrivacyPolicy.js";
 import Reviews from "./components/Review.js";
-import ModalDiscount from './components/ModalDiscount';
-
+import ModalDiscount from "./components/ModalDiscount";
 
 function App() {
   return (
     <SiteConfigProvider>
       <SiteMeta />
       <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Header />
-              <About />
-              <Advantages />
-              <Services />
-              <Portfolio />
-              <HowWork/>
-              <Calculator />
-              <Contacts />
-              <Reviews/>
-            </>
-          } />
-          <Route path="/service/:serviceId" element={<ServiceDetail />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        </Routes>
-        <Footer />
-        <ModalDiscount/>
-      </div>
-    </Router>
+        <div className="App">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Header />
+                  <About />
+                  <Advantages />
+                  <Services />
+                  <Portfolio />
+
+                  <Calculator />
+                  <Contacts />
+                  <HowWork />
+                </>
+              }
+            />
+            <Route path="/service/:serviceId" element={<ServiceDetail />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          </Routes>
+          <Footer />
+          <ModalDiscount />
+        </div>
+      </Router>
     </SiteConfigProvider>
   );
 }

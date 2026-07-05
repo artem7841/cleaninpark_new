@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "../style/Services.css";
 import { Link, useNavigate } from "react-router-dom";
 import { publicUrl } from "../utils/publicUrl";
@@ -9,7 +9,6 @@ const Services = () => {
   const [error, setError] = useState(null);
 
   const navigate = useNavigate();
-  const sliderRef = useRef(null);
 
   useEffect(() => {
     fetchServices();
@@ -36,36 +35,10 @@ const Services = () => {
         setServices(enrichedServices);
       }
     } catch (error) {
-      console.error('Ошибка загрузки услуг:', error);
-      setError('Ошибка загрузки данных');
+      console.error("Ошибка загрузки услуг:", error);
+      setError("Ошибка загрузки данных");
     } finally {
       setLoading(false);
-    }
-  };
-
-  const nextSlide = () => {
-    if (sliderRef.current) {
-      const card = sliderRef.current.querySelector('.service-card');
-      if (card) {
-        const cardWidth = card.offsetWidth + 20;
-        sliderRef.current.scrollBy({
-          left: cardWidth,
-          behavior: 'smooth'
-        });
-      }
-    }
-  };
-
-  const prevSlide = () => {
-    if (sliderRef.current) {
-      const card = sliderRef.current.querySelector('.service-card');
-      if (card) {
-        const cardWidth = card.offsetWidth + 20;
-        sliderRef.current.scrollBy({
-          left: -cardWidth,
-          behavior: 'smooth'
-        });
-      }
     }
   };
 
@@ -87,48 +60,45 @@ const Services = () => {
   }
 
   return (
-    <section id="services"  className="services">
+    <section id="services" className="services">
       <div className="container">
         <h2>Наши услуги</h2>
         {error && <div className="error-message">{error}</div>}
-        
-        <div className="services-slider">
-          <div className="services-track" ref={sliderRef}>
-            {services.map((service) => (
-              <div 
-                key={service.id} 
-                className="service-card"
-                onClick={() => handleMobileClick(service.link)}
-              >
-                <div className="service-card-inner">
-                  <div 
-                    className="service-card-front"
-                    style={{ backgroundImage: `url(${service.img})` }}
-                  >
-                    <p className="service-card-title">{service.title}</p>
-                  </div>
-                  
-                  <div className="service-card-content">
-                    <div className="service-card-description">
-                      <p className="service-price">{service.price}</p>
-                      <Link 
-                        to={service.link} 
-                        className="service-details-link"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        Читать подробное описание →
-                      </Link>
-                    </div>
+
+        {/* Изменили класс трека на контейнер сетки */}
+        <div className="services-grid">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className="service-card"
+              onClick={() => handleMobileClick(service.link)}
+            >
+              <div className="service-card-inner">
+                <div
+                  className="service-card-front"
+                  style={{ backgroundImage: `url(${service.img})` }}
+                >
+                  <p className="service-card-title">{service.title}</p>
+                </div>
+
+                <div className="service-card-content">
+                  <div className="service-card-description">
+                    <p className="service-short-description">
+                      {service.description}
+                    </p>
+                    <p className="service-price">{service.price}</p>
+                    <Link
+                      to={service.link}
+                      className="service-details-link"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Читать подробное описание →
+                    </Link>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-        
-        <div className="slider-controls">
-          <button className="slider-prev" onClick={prevSlide}>‹</button>
-          <button className="slider-next" onClick={nextSlide}>›</button>
+            </div>
+          ))}
         </div>
       </div>
     </section>
