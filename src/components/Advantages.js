@@ -1,4 +1,5 @@
 import React from "react";
+import "../style/Advantages.css";
 import icon1 from "../assets/icon1.png";
 import icon2 from "../assets/icon2.png";
 import icon3 from "../assets/icon3.png";
@@ -6,23 +7,23 @@ import icon4 from "../assets/icon4.png";
 
 const Advantages = () => {
   const items = [
-    { 
-      icon: icon1, 
+    {
+      icon: icon1,
       title: "Качество",
       text: "Используем профессиональное оборудование, химию; сотрудники проходят курсы проф. обучения"
     },
-    { 
-      icon: icon3, 
+    {
+      icon: icon3,
       title: "Экологичность",
       text: "Используем экологичные средства уборки и дезинфекции – это помогает защищать природу и здоровье клиентов"
     },
-    { 
-      icon: icon2, 
+    {
+      icon: icon2,
       title: "Скорость",
       text: "Справляемся с задачей быстро за счет большого числа клинеров, опыта кадров, проф. оборудования, методов и инструментов"
     },
-    { 
-      icon: icon4, 
+    {
+      icon: icon4,
       title: "Опыт",
       text: "С 2020 года мы провели более 8.000 уборок, и 97% клиентов остались довольными"
     },
@@ -54,7 +55,7 @@ const Advantages = () => {
           ))}
         </div>
       </div>
-      <button 
+      <button
           onClick={() => scrollToSection("contact")}
           className="btn btn-anim">
 

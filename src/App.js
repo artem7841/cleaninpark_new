@@ -6,6 +6,7 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Advantages from "./components/Advantages";
 import Portfolio from "./components/Portfolio";
+import Team from "./components/Team";
 import Calculator from "./components/Calculator";
 import Contacts from "./components/Contacts";
 import Footer from "./components/Footer";
@@ -30,8 +31,8 @@ function App() {
                   <About />
                   <Advantages />
                   <Services />
-                  <Portfolio />
 
+                  <Portfolio />
                   <Calculator />
                   <Contacts />
                   <HowWork />

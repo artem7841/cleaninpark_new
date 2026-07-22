@@ -15,7 +15,7 @@
     justify-content: space-between;
 }
 
-/* Левая часть */
+
 .footer-left {
     display: flex;
     align-items: center;
@@ -53,7 +53,6 @@
     opacity: 0.8;
 }
 
-/* Правая часть */
 .footer-mail {
     font-size: 20px;
     color: #111;
@@ -66,7 +65,6 @@
     border-color: #111;
 }
 
-/* Нижний копирайт */
 .footer-bottom {
     text-align: center;
     padding: 20px 0 30px 0;
@@ -76,7 +74,6 @@
 
 /* ---------------- Адаптив ---------------- */
 
-/* Для экранов до 992px */
 @media (max-width: 992px) {
     .footer-container {
         flex-direction: column;
@@ -94,7 +91,6 @@
     }
 }
 
-/* Для экранов до 600px */
 @media (max-width: 600px) {
     .footer-logo {
         font-size: 22px;

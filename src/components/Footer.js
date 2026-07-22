@@ -1,7 +1,7 @@
 import React from "react";
+import "../style/Footer.css";
 import tg from "../assets/tg_icon.png";
 import whatsapp from "../assets/MAX.svg.webp";
-import "../style/Footer.css";
 import logo from "../assets/logo1.png";
 import { useSiteConfig } from "../context/SiteConfigContext";
 
@@ -13,7 +13,6 @@ const Footer = () => {
     <footer className="footer">
       <div className="container3">
         <div className="footer-container">
-          {/* Левая часть */}
           <div className="footer-left">
             <img src={logo} className="logo2" alt="logo" />
             <div className="footer-socials">
@@ -34,13 +33,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Правая часть */}
           <div className="footer-right">
             <p className="footer-mail">{contacts.email}</p>
           </div>
         </div>
 
-        {/* Нижняя полоса */}
         <div className="footer-bottom">
           <p>
             © {company.brandName}, {company.copyrightYear}

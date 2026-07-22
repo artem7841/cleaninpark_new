@@ -1,0 +1,337 @@
+
+.contacts {
+    width: 100%;
+    background-color: white;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.contacts-container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.contacts-title {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.contacts-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contacts-item h3 {
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 23px;
+}
+
+.contacts-item p {
+    font-size: 23px;
+    color: black;
+    font-weight: 500;
+}
+
+.contacts-item a {
+    padding-top: 30px;
+    font-size: 23px;
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.contacts-item-span {
+    text-decoration: none;
+    margin-top: 30px;
+    font-size: 23px;
+    color: black;
+    font-weight: 500;
+}
+.contacts-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.map {
+    display: block;
+    margin: 0 auto;
+    padding-top: 50px;
+    width: 80%;
+    height: 500px;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.telegram {
+    background-color: #0088cc;
+    font-size: 20px;
+}
+
+.telegram:hover {
+    opacity: 0.85;
+}
+
+.whatsapp {
+    background: linear-gradient(#9a32df, #6932eb, #46ccfb);
+    font-size: 20px;
+}
+
+.whatsapp:hover {
+    opacity: 0.85;
+}
+
+.contacts-note {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.contacts-form-block h3 {
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.contacts-form-block p {
+    color: black;
+    margin-bottom: 30px;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.contacts-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.contacts-form input {
+    width: 92%;
+    padding: 16px;
+    background-color: #e2e2e2;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+.contacts-form textarea {
+    width: 94%;
+    padding: 3%;
+    background-color: #e2e2e2;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+.contacts-form select {
+    width: 100%;
+    padding: 16px;
+    background-color: #e2e2e2;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: box-shadow 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.contacts-form .form-group {
+    position: relative;
+}
+
+.contacts-form .form-group::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+    font-size: 12px;
+}
+
+.contacts-form select:hover {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.contacts-form select:focus {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.contacts-form select.error {
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
+}
+
+.contacts-form select option {
+    padding: 12px;
+    background-color: white;
+    color: #333;
+}
+
+.contacts-form select option[value=""] {
+    color: #999;
+}
+
+.contacts-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .contacts-container {
+        max-width: 1100px;
+    }
+
+    .contacts-grid {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    .contacts-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .contacts-title {
+        font-size: 34px;
+    }
+
+    .contacts-info,
+    .contacts-form-block {
+        text-align: center;
+    }
+
+    span {
+        text-align: start;
+    }
+
+    .contacts-buttons {
+        justify-content: center;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .contacts-form textarea {
+        width: 92%;
+        padding: 16px;
+        background-color: #e2e2e2;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        outline: none;
+        transition: box-shadow 0.2s;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts-form select {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+.contacts-form input:focus,
+.contacts-form textarea:focus {
+    box-shadow: 0 0 0 2px #4bc65b;
+}
+
+.contacts-form textarea {
+    height: 160px;
+    resize: none;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background-color: #5cd267;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #4bc65b;
+}
+
+@media (max-width: 600px) {
+    .contacts {
+        padding: 60px 0;
+    }
+
+    .contacts-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .contacts-item h3 {
+        font-size: 20px;
+    }
+
+    .contacts-item p {
+        font-size: 16px;
+    }
+
+    .contacts-form-block h3 {
+        font-size: 22px;
+    }
+
+    .btn,
+    .btn-submit {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .contacts-form textarea {
+        width: 92%;
+        padding: 16px;
+        background-color: #e2e2e2;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        outline: none;
+        transition: box-shadow 0.2s;
+    }
+}

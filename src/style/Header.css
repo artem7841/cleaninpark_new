@@ -1,3 +1,122 @@
+
+.header {
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.header-video-bg {
+  display: none;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1000;
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 0px;
+}
+
+.top-bar-right p {
+    color: white;
+}
+
+.top-bar-right button {
+    padding: 10px 26px;
+    background-color: #65d660;
+    border: 0;
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.header-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0 40px;
+    position: relative;
+    z-index: 1;
+    margin-top: -250px;
+}
+
+.header-image {
+    flex: 1;
+    max-width: 70%;
+    text-align: right;
+}
+
+.header-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    background: #5cd65c;
+    color: white;
+    border: none;
+    padding: 22px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 25px;
+    padding-right: 75px;
+    padding-left: 75px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-weight: 600;
+}
+
+.btn2 {
+    background: #5cd65c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 24px;
+    width: 100%;
+    height: 66px;
+    font-weight: 600;
+}
+
+.btn_second {
+    background-color: white;
+    border: 3px solid #5cd65c;
+    color: #5cd65c;
+}
+
+.btn-anim {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-anim:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(21, 223, 48, 0.3);
+}
+
 .btn3 {
     background: #5cd65c;
     color: white;
@@ -13,7 +132,6 @@
     font-weight: 600;
 }
 
-/* Навигационная панель */
 .navigation-bar {
     background: white;
 
@@ -39,7 +157,6 @@
     width: auto;
 }
 
-/* Десктопное меню */
 .desktop-nav-menu {
     flex: 1;
     display: flex;
@@ -93,7 +210,6 @@
     width: 80%;
 }
 
-/* Правый блок навигации */
 .nav-right {
     display: flex;
     align-items: center;
@@ -104,11 +220,10 @@
 
 .nav-phone {
     font-weight: 400;
-    color: white;
+    color: black;
     white-space: nowrap;
 }
 
-/* Бургер-меню */
 .burger-menu {
     display: none;
     flex-direction: column;
@@ -121,6 +236,7 @@
     padding: 0;
     z-index: 1001;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .burger-menu span {
@@ -143,7 +259,6 @@
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Мобильное меню на всю высоту с центрированием */
 .mobile-nav-menu {
     position: fixed;
     top: 0;
@@ -218,7 +333,6 @@
     color: #5cd65c;
 }
 
-/* Кнопка закрытия меню */
 .close-menu {
     position: absolute;
     top: 20px;
@@ -231,7 +345,6 @@
     z-index: 10000;
 }
 
-/* Основной хедер */
 .header {
     margin-top: 0px;
     padding: 3rem 0 4rem;
@@ -252,6 +365,7 @@
 .header-text h1 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
+    margin-top: 200px;
     line-height: 1.3;
 }
 
@@ -265,6 +379,7 @@
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    margin-top: 140px;
 }
 .close-menu {
     position: absolute;
@@ -300,11 +415,17 @@
 
     .nav-phone {
         font-size: 1.2rem;
-        color: black;
+        color: white;
         font-weight: 500;
         margin-right: 10px;
         margin-bottom: 10px;
     }
+
+    .header-image img {
+        display: none;
+        margin-top: 0;
+    }
+
 
     .nav-logo-img {
         height: 50px;
@@ -316,32 +437,94 @@
     }
 
     .header-text h1 {
+        margin-top: 30px;
         font-size: 1.8rem;
     }
-}
 
-@media (min-width: 769px) {
-    .mobile-nav-menu {
-        display: none !important;
+    .top-bar {
+        flex-wrap: wrap;
+        gap: 10px;
     }
-}
 
-/* Анимации и доступность */
-.nav-menu-link:focus,
-.mobile-menu-link:focus,
-.burger-menu:focus {
-    outline: 2px solid #5cd65c;
-    outline-offset: 2px;
-}
-
-/* Анимация появления кнопок */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    .top-bar-left {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .top-bar-right {
+        width: 100%;
+        justify-content: center;
+        margin-right: 0;
+    }
+
+    .top-bar-right button {
+        color: white;
+        background-color: #65d660;
+        font-size: 70px;
+    }
+
+    .top-bar-right p {
+        color: #65d660;
+        margin-right: 10px;
+        font-size: 70px;
+    }
+    .logo {
+        width: 150px;
+        max-height: 100px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        padding: 20px 0;
+        margin-top: 0;
+    }
+
+    .header-text {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .header-image {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .header-video-bg {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .header-video-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .header-video-bg::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .header .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-text h1 {
+      color: #ffffff;
     }
 }

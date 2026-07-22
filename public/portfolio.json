@@ -23,5 +23,19 @@
     "images/portfolio/gallery/03.jpg",
     "images/portfolio/gallery/04.jpg",
     "images/portfolio/gallery/05.jpg"
+  ],
+  "teamwork": [
+    "images/portfolio/teamwork/01.jpg",
+    "images/portfolio/teamwork/02.jpg",
+    "images/portfolio/teamwork/03.jpg",
+    "images/portfolio/teamwork/04.jpg",
+    "images/portfolio/teamwork/05.jpg",
+    "images/portfolio/teamwork/07.jpg",
+    "images/portfolio/teamwork/08.jpg",
+    "images/portfolio/teamwork/09.jpg",
+    "images/portfolio/teamwork/10.jpg",
+    "images/portfolio/teamwork/11.jpg",
+    "images/portfolio/teamwork/12.jpg",
+    "images/portfolio/teamwork/13.jpg"
   ]
 }

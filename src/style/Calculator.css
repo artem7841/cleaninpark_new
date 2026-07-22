@@ -1,0 +1,27 @@
+
+.calculator {
+    background: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+.calc-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 20px auto;
+    gap: 10px;
+}
+.calc-form input,
+.calc-form select,
+.calc-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 25px;
+    padding: 20px;
+}
+.price-result {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #333;
+}

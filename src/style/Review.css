@@ -148,14 +148,13 @@
     padding: 60px 20px;
 }
 
-/* Блок рейтинга Авито под заголовком */
 .avito-rating-badge {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
     margin-bottom: 35px;
-    flex-wrap: wrap; /* Чтобы на мобильных кнопка переносилась вниз, если мало места */
+    flex-wrap: wrap;
 }
 
 .avito-rating-score {
@@ -176,18 +175,16 @@
     color: #767676;
 }
 
-/* Фирменный зеленый цвет звезд Авито */
 .avito-stars {
     font-size: 1.6rem;
     color: #ffb021;
-    letter-spacing: -2px; /* Чуть сдвигаем звезды ближе друг к другу */
+    letter-spacing: -2px;
 }
 
-/* Кнопка "Мы на Авито" */
 .avito-link-btn {
     display: inline-flex;
     align-items: center;
-    background-color: #00aaff; /* Зеленый цвет Авито */
+    background-color: #00aaff;
     color: white;
     text-decoration: none;
     padding: 10px 20px;
@@ -200,7 +197,7 @@
 }
 
 .avito-link-btn:hover {
-    background-color: #59c8ff; /* Чуть темнее при наведении */
+    background-color: #59c8ff;
 }
 
 .avito-link-btn:active {
@@ -208,10 +205,9 @@
 }
 @media (max-width: 768px) {
     .reviews-container {
-        /* Меняем minmax с 650px на 100%, чтобы карточка не сжималась и не вылезала за экран */
         grid-template-columns: minmax(0, 1fr);
         gap: 20px;
-        max-width: 100%; /* Убираем жесткое ограничение на планшетах/телефонах */
+        max-width: 100%;
     }
 
     .reviews-section {
@@ -224,35 +220,33 @@
     }
 
     .review-card {
-        padding: 22px; /* Чуть увеличиваем внутренние отступы для объема */
-        border-radius: 16px; /* Делаем углы карточек более мягкими и современными */
+        padding: 22px;
+        border-radius: 16px;
     }
 
     .review-header {
-        flex-direction: row; /* Гарантируем, что имя и звезды на одной линии */
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
 
     .review-content {
-        font-size: 1.05rem; /* Делаем текст отзыва крупнее и читабельнее */
+        font-size: 1.05rem;
         line-height: 1.5;
         margin-top: 10px;
     }
 }
 @media (max-width: 480px) {
-    /* Оптимизация плашки Авито на телефонах */
     .avito-rating-badge {
         flex-direction: column;
         gap: 12px;
         margin-bottom: 30px;
         background: #f9f9f9;
-        padding: 20px; /* Увеличили внутренние отступы для баланса */
+        padding: 20px;
         width: 100%;
-        box-sizing: border-box; /* Гарантирует, что padding не раздувает плашку наружу */
+        box-sizing: border-box;
     }
 
-    /* Оценка и звезды теперь стоят в один аккуратный ряд */
     .avito-rating-score {
         display: flex;
         align-items: baseline;
@@ -268,17 +262,16 @@
         margin-top: -2px;
     }
 
-    /* Исправленная кнопка "Мы на Авито" */
+
     .avito-link-btn {
         width: 100%;
-        box-sizing: border-box; /* Важно! Защищает кнопку от вылезания за края подложки */
+        box-sizing: border-box;
         justify-content: center;
         padding: 14px 20px;
         font-size: 1rem;
         border-radius: 12px;
     }
 
-    /* Оптимизация карточки отзыва */
     .review-header {
         flex-direction: column;
         align-items: flex-start;

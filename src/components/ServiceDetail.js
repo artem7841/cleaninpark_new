@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import { useParams, Link } from "react-router-dom";
+import SimpleSlider from "./SimpleSlider";
+
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
@@ -155,6 +157,11 @@ const ServiceDetail = () => {
         >
           {service.description}
         </div>
+
+        <SimpleSlider
+          images={service.images ? service.images.map(img => `/images/serv_info/${img}`) : []}
+        />
+
 
         {/* Секции с что входит */}
         {service.sections &&

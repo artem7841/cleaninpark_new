@@ -8,16 +8,15 @@
     font-size: 2rem;
 }
 
-/* Новая обертка для сетки вместо слайдера */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 4 колонки одинаковой ширины */
-    gap: 20px; /* Отступы между карточками */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     width: 100%;
 }
 
 .service-card {
-    width: 100%; /* Карточка занимает всю ширину ячейки Grid */
+    width: 100%;
     height: 330px;
     position: relative;
     border-radius: 32px;
@@ -32,7 +31,6 @@
     height: 100%;
 }
 
-/* Передняя часть карточки (фото + название) */
 .service-card-front {
     position: absolute;
     top: 0;
@@ -47,7 +45,6 @@
     z-index: 1;
 }
 
-/* Фоновое изображение */
 .service-card-front::before {
     content: "";
     position: absolute;
@@ -63,7 +60,6 @@
     transition: transform 0.3s ease;
 }
 
-/* Градиент только в нижней части */
 .service-card-front::after {
     content: "";
     position: absolute;
@@ -93,7 +89,6 @@
     padding: 30px 15px;
 }
 
-/* Контент карточки (описание) */
 .service-card-content {
     position: absolute;
     top: 100%;
@@ -163,7 +158,6 @@
     text-decoration: none;
 }
 
-/* Hover эффекты для десктопа */
 @media (min-width: 1025px) {
     .service-card:hover .service-card-front::before {
         transform: scale(1.05);
@@ -189,25 +183,23 @@
     }
 }
 
-/* Адаптивность для сетки под разные экраны */
 @media (max-width: 1200px) {
     .services-grid {
         grid-template-columns: repeat(
             3,
             1fr
-        ); /* 3 колонки на средних экранах */
+        );
     }
 }
 @media (max-width: 1024px) {
     .services-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .service-card-content {
-        display: none; /* Скрываем описание на мобильных */
+        display: none;
     }
 
-    /* Делаем всю карточку ссылкой на мобильных */
     .service-card::after {
         content: "";
         position: absolute;
@@ -219,7 +211,6 @@
         cursor: pointer;
     }
 
-    /* Убираем все hover эффекты на мобильных */
     .service-card:hover .service-card-front::before {
         transform: none;
     }
@@ -238,38 +229,35 @@
         transform: none;
     }
 
-    /* Легкий эффект при нажатии на мобильных */
     .service-card:active .service-card-front::before {
         transform: scale(0.98);
         transition: transform 0.1s ease;
     }
 }
 
-/* Стили для телефонов */
 @media (max-width: 576px) {
     .services-grid {
         grid-template-columns: repeat(
             2,
             1fr
-        ); /* Оставляем 2 колонки и на смартфонах */
-        gap: 12px; /* Чуть уменьшаем отступы, чтобы карточки были крупнее */
+        );
+        gap: 12px;
     }
 
     .service-card {
-        height: 200px; /* Уменьшаем высоту, чтобы сохранить пропорции карточки */
-        border-radius: 20px; /* Делаем скругление чуть меньше для узких карточек */
+        height: 200px;
+        border-radius: 20px;
     }
 
     .service-card-title {
-        font-size: 0.95rem; /* Уменьшаем шрифт, чтобы текст не вылезал за края */
+        font-size: 0.95rem;
         padding: 10px 5px;
     }
 }
 
-/* Для самых маленьких экранов (до 375px) */
 @media (max-width: 375px) {
     .services-grid {
-        gap: 8px; /* Минимальные отступы */
+        gap: 8px;
     }
 
     .service-card {

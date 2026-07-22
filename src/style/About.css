@@ -84,7 +84,6 @@
   margin-top: 25px;
 }
 
-/* Стили для фото основателя */
 .about-image {
   display: flex;
   flex-direction: column;
@@ -138,77 +137,74 @@
   font-style: italic;
 }
 
-/* Адаптивность для планшетов */
 @media (max-width: 1024px) {
   .about-content {
     grid-template-columns: 1fr 350px;
     gap: 40px;
   }
-  
+
   .about-title {
     font-size: 2.2rem;
   }
-  
+
   .founder-photo {
     width: 250px;
     height: 250px;
   }
 }
 
-/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
   .about {
     padding: 60px 0;
   }
-  
+
   .about-content {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .about-title {
     font-size: 2rem;
     text-align: center;
   }
-  
+
   .about-philosophy {
     padding: 25px 20px;
   }
-  
+
   .founder-photo {
     width: 220px;
     height: 220px;
   }
-  
+
   .about-container {
     padding: 0 15px;
   }
 }
 
-/* Адаптивность для маленьких мобильных */
 @media (max-width: 480px) {
   .about {
     padding: 40px 0;
   }
-  
+
   .about-title {
     font-size: 1.8rem;
   }
-  
+
   .about-description p,
   .about-conclusion p {
     font-size: 1rem;
   }
-  
+
   .philosophy-item {
     font-size: 1rem;
   }
-  
+
   .founder-photo {
     width: 200px;
     height: 200px;
   }
-  
+
   .about-philosophy {
     margin: 30px 0;
     padding: 20px 15px;

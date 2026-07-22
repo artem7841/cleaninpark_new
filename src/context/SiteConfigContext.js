@@ -11,7 +11,7 @@ const defaultConfig = {
     brandName: "CleanInPark",
     legalName: "Лопатин Ярослав Михайлович",
     inn: "667908332008",
-    founderName: "Лопатин Ярослав",
+    founderName: "Конова Ангелина",
     founderRole: "Основатель CleanInPark",
     copyrightYear: "2025",
     websiteUrl: "https://cleaninpark.ru",
