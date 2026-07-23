@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import main from "../assets/main_image.jpg";
 import logo from "../assets/logo1.png";
-import backgroundVideo from "../assets/video.MOV";
+import backgroundVideo from "../assets/video.mp4";
 import "../style/Header.css";
 import { useSiteConfig } from "../context/SiteConfigContext";
 
@@ -84,12 +84,19 @@ const Header = () => {
 
       {/* Основной хедер */}
       <header id="header" className="header">
-        {/* 2. Добавляем тег видео внутрь хедера */}
         <div className="header-video-bg">
-          <video autoPlay muted loop playsInline>
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            preload="auto"
+            defaultMuted
+          >
             <source src={backgroundVideo} type="video/mp4" />
           </video>
         </div>
+
 
         <div className="container">
           <div className="top-bar">
