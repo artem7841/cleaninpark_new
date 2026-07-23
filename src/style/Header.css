@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 
 .header {
   position: relative;
@@ -273,8 +277,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100vw;
+    height: 100dvh;
+    width: 100%;
 }
 
 .mobile-nav-menu.active {
@@ -404,12 +408,16 @@
         display: flex;
     }
 
+    .nav-container {
+        justify-content: center;
+    }
+
     .nav-right {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-left: 47%;
-        gap: 1.5rem;
+        margin-left: 0;
+        gap: 1rem;
     }
 
     .nav-phone {
@@ -431,7 +439,7 @@
     }
 
     .header {
-        position: relative; 
+        position: relative;
         overflow: hidden;
         margin-top: 0px;
         padding: 2rem 0 3rem;
@@ -463,13 +471,15 @@
     .top-bar-right button {
         color: white;
         background-color: #65d660;
-        font-size: 70px;
+        font-size: 16px;
+        padding: 10px 20px;
+        white-space: nowrap;
     }
 
     .top-bar-right p {
         color: #65d660;
         margin-right: 10px;
-        font-size: 70px;
+        font-size: 16px;
     }
     .logo {
         width: 150px;
@@ -477,7 +487,7 @@
     }
 
     .header-content {
-        display: flex; 
+        display: flex;
         flex-direction: column;
         padding: 20px 0;
         margin-top: 0;
@@ -501,7 +511,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 1; 
+        z-index: 1;
         overflow: hidden;
         }
 
@@ -509,7 +519,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        will-change: transform; 
+        will-change: transform;
         }
 
     .header-video-bg::after {
@@ -520,13 +530,13 @@
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.6);
-        z-index: 2; 
+        z-index: 2;
         }
 
     .header .container {
-        position: relative; 
-        z-index: 3; 
-        pointer-events: auto; 
+        position: relative;
+        z-index: 3;
+        pointer-events: auto;
         }
 
     .header-text h1 {
