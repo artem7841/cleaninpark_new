@@ -1,7 +1,6 @@
-
 .advantages {
-    padding: 80px 0;
-    background: #fff;
+    padding: 0px 0 50px ;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafd 100%);
     text-align: center;
 }
 
@@ -13,37 +12,55 @@
 
 .advantages-title {
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2.8rem;
+    font-weight: 800;
     margin-bottom: 60px;
-    color: #333;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+.advantages-title::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #65d660;
+    border-radius: 2px;
 }
 
 .advantages button {
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 .advantages-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     width: 100%;
 }
 
 .advantage-card {
-    background: #f8f9fa;
-    border-radius: 16px;
-    padding: 40px 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px 25px;
     text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-    border: 1px solid #e9ecef;
+        transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        border-color 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .advantage-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px #65d660;
+    border-color: #65d660;
 }
 
 .advantage-icon-wrapper {
@@ -53,52 +70,74 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff;
+    background: #edf4fe;
     border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.advantage-card:hover .advantage-icon-wrapper {
+    transform: scale(1.05);
+    background: #65d660;
+}
+
+.advantage-icon-wrapper span {
+    font-size: 2.2rem;
+    line-height: 1;
 }
 
 .advantage-icon {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     object-fit: contain;
+    transition: filter 0.3s ease;
+}
+
+.advantage-card:hover .advantage-icon {
+    filter: brightness(0) invert(1);
 }
 
 .advantage-card-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a1a1a;
 }
 
 .advantage-card-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
-    color: #666;
+    color: #555;
     margin: 0;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (max-width: 992px) {
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
 }
 
 @media (max-width: 768px) {
     .advantages {
-        padding: 60px 0;
+        padding: 70px 0;
     }
 
     .advantages-title {
-        font-size: 2rem;
-        margin-bottom: 40px;
+        font-size: 2.2rem;
+        margin-bottom: 50px;
     }
 
     .advantages-grid {
         grid-template-columns: 1fr;
         gap: 20px;
-        max-width: 500px;
+        max-width: 480px;
         margin: 0 auto;
     }
 
     .advantage-card {
-        padding: 30px 20px;
+        padding: 35px 20px;
     }
 
     .advantage-icon-wrapper {
@@ -107,35 +146,23 @@
         margin-bottom: 20px;
     }
 
-    .advantage-icon {
-        width: 35px;
-        height: 35px;
-    }
-
     .advantage-card-title {
         font-size: 1.3rem;
-    }
-
-    .advantage-card-text {
-        font-size: 0.95rem;
     }
 }
 
 @media (max-width: 480px) {
-    .header-text h1 {
-        font-size: 32px;
-    }
     .container {
         padding: 0 15px;
     }
 
     .advantages {
-        padding: 40px 0;
+        padding: 50px 0;
     }
 
     .advantages-title {
-        font-size: 1.75rem;
-        margin-bottom: 30px;
+        font-size: 1.8rem;
+        margin-bottom: 40px;
     }
 
     .advantage-card {
@@ -143,19 +170,13 @@
     }
 
     .advantage-icon-wrapper {
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
         margin-bottom: 15px;
-    }
-
-    .advantage-icon {
-        width: 30px;
-        height: 30px;
     }
 
     .advantage-card-title {
         font-size: 1.2rem;
-        margin-bottom: 12px;
     }
 
     .advantage-card-text {

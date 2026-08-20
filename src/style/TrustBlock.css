@@ -1,0 +1,49 @@
+.trust-section {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trust-title {
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.trust-logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+}
+
+.logo-item img {
+  max-width: 100%;
+  height: auto;
+  max-height: 50px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.logo-item img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .trust-logos {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .logo-item img {
+    max-height: 40px;
+  }
+
+  .trust-title {
+      font-size: 35px;
+      margin-bottom: 40px;
+  }
+}

@@ -55,22 +55,6 @@
       "description": "Точечное решение проблем с чистотой",
       "price": "От 500 руб",
       "link": "/service/additional-services"
-    },
-    {
-      "id": 9,
-      "title": "Химчистка мягкой мебели и ковров",
-      "img": "images/services/serv_9.jpg",
-      "description": "Профессиональная глубокая очистка мебели от пятен, запахов, пыли и аллергенов.",
-      "price": "От 500 ₽",
-      "link": "/service/dry-cleaning"
-    },
-    {
-      "id": 10,
-      "title": "Озонирование помещений",
-      "img": "images/services/serv_8.jpg",
-      "description": "Профессиональная обработка помещений озоном для устранения неприятных запахов, бактерий, вирусов, плесени и аллергенов.",
-      "price": "От 1 500 ₽",
-      "link": "/service/ozonation"
     }
   ]
 }

@@ -1,31 +1,37 @@
 import React from "react";
 import "../style/Advantages.css";
-import icon1 from "../assets/icon1.png";
-import icon2 from "../assets/icon2.png";
-import icon3 from "../assets/icon3.png";
-import icon4 from "../assets/icon4.png";
 
 const Advantages = () => {
   const items = [
     {
-      icon: icon1,
-      title: "Качество",
-      text: "Используем профессиональное оборудование, химию; сотрудники проходят курсы проф. обучения"
+      icon: "⭐",
+      title: "8000+ уборок",
+      text: "Огромный багаж выполненных заказов и довольных клиентов по всему городу."
     },
     {
-      icon: icon3,
-      title: "Экологичность",
-      text: "Используем экологичные средства уборки и дезинфекции – это помогает защищать природу и здоровье клиентов"
+      icon: "👥",
+      title: "Своя школа обучения",
+      text: "Собственная система обучения сотрудников. Никаких случайных людей с улицы."
     },
     {
-      icon: icon2,
-      title: "Скорость",
-      text: "Справляемся с задачей быстро за счет большого числа клинеров, опыта кадров, проф. оборудования, методов и инструментов"
+      icon: "🛡️",
+      title: "Контроль качества",
+      text: "Единые строгие стандарты качества и обязательный контроль каждой уборки."
     },
     {
-      icon: icon4,
-      title: "Опыт",
-      text: "С 2020 года мы провели более 8.000 уборок, и 97% клиентов остались довольными"
+      icon: "🌿",
+      title: "Эко-средства",
+      text: "Безопасные профессиональные средства, безвредные для детей и домашних животных."
+    },
+    {
+      icon: "📅",
+      title: "Работаем с 2020 года",
+      text: "Стабильная клининговая компания с проверенной годами репутацией."
+    },
+    {
+      icon: "🤝",
+      title: "Сервис для людей",
+      text: "Клиентоориентированный подход и персональные решения под любые ваши задачи."
     },
   ];
 
@@ -37,30 +43,32 @@ const Advantages = () => {
         block: 'start'
       });
     }
-  }
+  };
 
   return (
     <section id="advantages" className="advantages">
       <div className="container">
-        <h2 className="advantages-title">Наши преимущества</h2>
+        <h2 className="advantages-title">Почему выбирают нас</h2>
+
         <div className="advantages-grid">
-          {items.map((advantage, index) => (
-            <div key={index} className="advantage-card">
+          {items.map((advantage) => (
+            <div key={advantage.title} className="advantage-card">
               <div className="advantage-icon-wrapper">
-                <img src={advantage.icon} alt={advantage.title} className="advantage-icon"/>
+                <span>{advantage.icon}</span>
               </div>
               <h3 className="advantage-card-title">{advantage.title}</h3>
               <p className="advantage-card-text">{advantage.text}</p>
             </div>
           ))}
         </div>
-      </div>
-      <button
-          onClick={() => scrollToSection("contact")}
-          className="btn btn-anim">
 
-          Заказать уборку
+        <button
+          onClick={() => scrollToSection("contact")}
+          className="btn btn-anim"
+        >
+          Заказать идеальную уборку
         </button>
+      </div>
     </section>
   );
 };

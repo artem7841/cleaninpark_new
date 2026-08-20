@@ -85,11 +85,11 @@ const Header = () => {
       {/* Основной хедер */}
       <header id="header" className="header">
         <div className="header-video-bg">
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline 
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
             preload="auto"
             defaultMuted
           >
@@ -113,7 +113,7 @@ const Header = () => {
 
           <div className="header-content">
             <div className="header-text">
-              <h1>Профессиональная уборка квартир, домов, офисов в Екатеринбурге.</h1>
+              <h1>Генеральная и поддерживающая уборка • Клининг после ремонта • Химчистка мебели • Мойка окон • Озонирование помещений</h1>
               <button className="btn pulse-button" onClick={() => scrollToSection('calculator')}>
                 Рассчитать стоимость
               </button>

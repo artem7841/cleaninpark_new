@@ -6,7 +6,6 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Advantages from "./components/Advantages";
 import Portfolio from "./components/Portfolio";
-import Team from "./components/Team";
 import Calculator from "./components/Calculator";
 import Contacts from "./components/Contacts";
 import Footer from "./components/Footer";
@@ -15,6 +14,9 @@ import ServiceDetail from "./components/ServiceDetail.js";
 import PrivacyPolicy from "./components/PrivacyPolicy.js";
 import Reviews from "./components/Review.js";
 import ModalDiscount from "./components/ModalDiscount";
+import TrustBlock from "./components/TrustBlock.js";
+import GalleryOurWork from "./components/GalleryOurWork.js";
+import GalleryTeamWork from "./components/GalleryTeamWork.js";
 
 function App() {
   return (
@@ -31,19 +33,22 @@ function App() {
                   <About />
                   <Advantages />
                   <Services />
-
-                  <Portfolio />
                   <Calculator />
+                  <Portfolio />
+
                   <Contacts />
                   <HowWork />
+                  <TrustBlock />
                 </>
               }
             />
             <Route path="/service/:serviceId" element={<ServiceDetail />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/gallery" element={<GalleryOurWork />} />
+            <Route path="/gallery-teamwork" element={<GalleryTeamWork />} />
           </Routes>
           <Footer />
-          <ModalDiscount />
+
         </div>
       </Router>
     </SiteConfigProvider>

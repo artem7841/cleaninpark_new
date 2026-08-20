@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "../style/Review.css";
+import ModalDiscount from "./ModalDiscount";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [visibleCount, setVisibleCount] = useState(3);
   const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Загрузка данных из JSON файла
+
   useEffect(() => {
     const fetchReviews = async () => {
       try {
@@ -23,12 +25,10 @@ const Reviews = () => {
     fetchReviews();
   }, []);
 
-  // Функция для показа всех отзывов
   const showAllReviews = () => {
     setVisibleCount(reviews.length);
   };
 
-  // Функция для скрытия части отзывов
   const showLessReviews = () => {
     setVisibleCount(3);
   };
@@ -41,21 +41,20 @@ const Reviews = () => {
     <div id="reviews" className="reviews-section">
       <h2 className="reviews-title">Отзывы наших клиентов</h2>
 
-      {/* Новый блок рейтинга Авито */}
       <div className="avito-rating-badge">
         <div className="avito-rating-score">
           <span className="avito-number">4.9</span>
           <span className="avito-max">из 5</span>
         </div>
         <div className="avito-stars">
-          {/* 5 закрашенных зеленых звезд как на Авито */}
+
           <span className="avito-star-filled">★</span>
           <span className="avito-star-filled">★</span>
           <span className="avito-star-filled">★</span>
           <span className="avito-star-filled">★</span>
           <span className="avito-star-filled">★</span>
         </div>
-        {/* Замените # на вашу реальную ссылку на профиль/объявление Авито */}
+
         <a
           href="https://www.avito.ru/user/fe213175fe7f543b209df32dca76376b/profile?src=sharing"
           target="_blank"
@@ -102,6 +101,15 @@ const Reviews = () => {
           )
         )}
       </div>
+
+      <button className="btn pulse-button" onClick={() => setIsModalOpen(true)} >
+        Получить скидку
+      </button>
+
+      <ModalDiscount
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+            />
     </div>
   );
 };

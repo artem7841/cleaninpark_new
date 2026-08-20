@@ -5,6 +5,7 @@ import Reviews from "./Review.js";
 import "../style/Potrfolio.css";
 import SimpleSlider from "./SimpleSlider";
 import BeforeAfterSlider from "./BeforeAfterSlider";
+import { useNavigate } from 'react-router-dom';
 
 const Portfolio = () => {
   const [beforeAfterSlides, setBeforeAfterSlides] = useState([]);
@@ -12,6 +13,7 @@ const Portfolio = () => {
   const [teamWorkPhotos, setTeamWorkPhotos] = useState([]);
   const [loading, setLoading] = useState(true);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPortfolio = async () => {
@@ -74,16 +76,18 @@ const Portfolio = () => {
         <h2>Наши работы</h2>
 
         <BeforeAfterSlider slides={beforeAfterSlides} />
+        <button className="show-more-btn"  onClick={() => navigate(`/gallery`)}>
+          Посмотреть больше работ
+        </button>
+
+        <Reviews />
 
         {teamWorkPhotos.length > 0 && (
           <SimpleSlider images={teamWorkPhotos} title="Работа команды" />
         )}
-
-        <Reviews />
-
-        {galleryPhotos.length > 0 && (
-          <SimpleSlider images={galleryPhotos} title="Наши работы" />
-        )}
+        <button className="show-more-btn"  onClick={() => navigate(`/gallery-teamwork`)}>
+          Посмотреть больше работ
+        </button>
       </div>
     </section>
   );
