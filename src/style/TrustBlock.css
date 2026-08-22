@@ -20,6 +20,36 @@
   justify-items: center;
 }
 
+.trust-complexes {
+  max-width: 900px;
+  margin: 0 auto 30px auto; /* Отступ снизу до логотипов */
+  text-align: center;
+  padding: 0 15px;
+}
+
+.complexes-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+  margin-top: 50px;
+}
+
+.complexes-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 10px; /* Отступы между ЖК по горизонтали и вертикали */
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.complexes-list .separator {
+  color: #ccc; /* Цвет точек разделителей можно сделать помягче */
+}
+
+
 .logo-item img {
   max-width: 100%;
   height: auto;

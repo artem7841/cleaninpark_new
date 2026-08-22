@@ -19,7 +19,7 @@ const Calculator = () => {
   useEffect(() => {
     const loadConfig = async () => {
       try {
-        const response = await fetch(publicUrl("services.json"));
+        const response = await fetch(publicUrl("services_culculator.json"));
         if (!response.ok) throw new Error(`Ошибка загрузки: ${response.status}`);
 
         const jsonData = await response.json();

@@ -36,7 +36,6 @@ const Header = () => {
 
   return (
     <>
-      {/* Навигационная панель */}
       <nav className="navigation-bar">
         <div className="container">
           <div className="nav-container">
@@ -66,7 +65,6 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Мобильное меню */}
       <div className={`mobile-nav-menu ${isMenuOpen ? 'active' : ''}`}>
         <div className="container">
           <button className="close-menu" onClick={() => setIsMenuOpen(false)} aria-label="Закрыть меню">✕</button>
@@ -82,7 +80,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Основной хедер */}
       <header id="header" className="header">
         <div className="header-video-bg">
           <video
@@ -92,6 +89,7 @@ const Header = () => {
             playsInline
             preload="auto"
             defaultMuted
+            poster={main} 
           >
             <source src={backgroundVideo} type="video/mp4" />
           </video>

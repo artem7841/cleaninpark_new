@@ -131,8 +131,9 @@
     width: 100%;
 }
 
+
 .contacts-form input {
-    width: 92%;
+    width: 100%;
     padding: 16px;
     background-color: #e2e2e2;
     border: none;
@@ -206,7 +207,7 @@
 }
 
 .contacts-form label {
-    display: block;
+
     margin-bottom: 8px;
     font-weight: 500;
     color: #333;

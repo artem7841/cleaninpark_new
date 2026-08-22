@@ -22,6 +22,23 @@ const TrustBlock = () => {
           </div>
         ))}
       </div>
+      <div className="trust-complexes">
+    <h3 className='complexes-title'>Работаем в жилых комплексах Екатеринбурга:</h3>
+    <div className="complexes-list">
+      <span>ЖК Светлый</span> <span className="separator">•</span>
+      <span>ЖК Клевер Парк</span> <span className="separator">•</span>
+      <span>ЖК Солнечный</span> <span className="separator">•</span>
+      <span>ЖК Первый Академ</span> <span className="separator">•</span>
+      <span>ЖК Преображенский</span> <span className="separator">•</span>
+      <span>ЖК Eleven</span> <span className="separator">•</span>
+      <span>ЖК Южные кварталы</span> <span className="separator">•</span>
+      <span>ЖК Шишимская горка</span> <span className="separator">•</span>
+      <span>ЖК Московский квартал</span> <span className="separator">•</span>
+      <span>ЖК Макаровский</span> <span className="separator">•</span>
+      <span>ЖК Парк Столиц</span> <span className="separator">•</span>
+      <span>ЖК Исеть Парк</span> <span className="separator">и других.</span>
+    </div>
+  </div>
     </section>
   );
 };
